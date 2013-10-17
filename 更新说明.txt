@@ -1,6 +1,6 @@
 Version 0.41---何伟
 更新了background.js,getBrowserVer()在文件载入的时候执行一次，其他时候不执行；
-更新了analysis.js，添加了analyseData()方法，用以初期分析数据。
+更新了analysis.js，添加了analyseData()方法。
 
 Version 0.36---赵小天
 更新了options.js,options.html,options.html和background.js文件；
