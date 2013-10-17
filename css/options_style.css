@@ -1,0 +1,17 @@
+ul.url{
+   list-style-type: disc;
+}
+p{
+    font-family: Western;
+    font-size: 15px;
+    font-weight: bolder;
+}
+.delete{
+    font-size:small;
+    color:blue;
+    text-decoration:underline;
+}
+.delete:hover{
+    cursor:pointer;
+}
+

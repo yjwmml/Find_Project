@@ -1,0 +1,59 @@
+Version 0.41---何伟
+更新了background.js,getBrowserVer()在文件载入的时候执行一次，其他时候不执行；
+更新了analysis.js，添加了analyseData()方法，用以初期分析数据。
+
+Version 0.36---赵小天
+更新了options.js,options.html,options.html和background.js文件；
+修改了部分html界面以动态添加删除过滤列表过滤项，将过滤列表以json形式存入localstorage。
+
+Version 0.35---何伟
+新建了analysis.js文件，用于读取分析和处理数据；
+添加了readData()方法用于读取数据。
+
+Version 0.34---何伟
+更新了background.js文件：
+更新了getWebsite()方法，解决了部分网站不能正确获取的问题。
+
+Version 0.33---何伟
+更新了background.js文件：
+实现了有关存储数据的代码
+更新了isInUserFilterList(url)方法.
+
+Version 0.32－－－赵小天
+更新了background.js文件；
+测试并优化了前台时间相关的代码；
+测试情况顺序：前台打开a；后台打开b；切换b前台；切换a前台；切换b前台；切换a前台；前台打开空页；前台空页刷新至c；切换b前台；切换c前台；
+            前台c刷新至空页；前台关闭空页；前台关闭b；前台关闭a。
+出现问题描述：前台c刷新至空页：c纪录项语言，浏览器版本，网站均为undefined，结束时间误差5秒；
+            最后一个网页关闭后，浏览器退出，onActivated并没有触发，导致最后一个网页的最后一次前台时间没有被纪录。
+除上述问题外，其他运行良好。
+
+Version 0.31－－－赵小天
+更新了background.js文件；
+在逻辑上基本解决了前台时间的问题，目前暂未测试；
+下一版本将考虑测试并完善修复代码。
+
+Version 0.30－－－赵小天
+更新了background.js文件；
+初步完善了chrome.tabs.onActived事件监听；
+解决了activeTab切换时，前台Record计时器的暂停与激活。
+
+Version 0.29－－－何伟
+更新了background.js文件；
+实现了isInUserFilterList(url)方法。
+
+Version 0.28－－－何伟
+更新了background.js文件；
+实现了getWebsite()方法；
+添加并实现了getBrowserVer()方法用来捕获浏览器类型及版本。
+
+Version 0.25－－－赵小天
+更新了background.js文件；
+新增了chrome.tabs.onRemoved和chrome.tabs.onUpdated事件监听；
+将纪录项封装成为一个Record对象，同时捕获该对象的startTime,url,title,lang等纪录值；
+将系统过滤对象封装成一个函数isInSysFilterList；
+插件将在你每次将被置url的网页更新后弹窗。
+
+注：
+不知道什么原因，在mac os x下chrome测试，需要点击background.html两次后，程序才能正常加载，
+所以你测试如果alert弹窗不出现，请按上述操作执行后再测试；或者你打包后安装亦可。
